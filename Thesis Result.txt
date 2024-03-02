@@ -1,0 +1,210 @@
+# Load the images and labels into a dataframe
+
+Result From DataFrame
+
+							Data  Labels
+
+0	[[[0.5529411764705883, 0.5254901960784314, 0.4...	1
+1	[[[0.09411764705882353, 0.11372549019607843, 0...	1
+2	[[[0.7607843137254902, 0.7019607843137254, 0.6...	1
+3	[[[0.2196078431372549, 0.25882352941176473, 0....	1
+4	[[[0.16470588235294117, 0.3333333333333333, 0....	1
+
+
+
+
+# Split the dataframe into training and testing sets
+
+(1316, 224, 224, 3) (330, 224, 224, 3) (1316,) (330,)
+
+
+
+# Define the CNN architecture
+
+Model: "sequential_1"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ mobilenetv2_1.00_224 (Func  (None, 7, 7, 1280)        2257984   
+ tional)                                                         
+                                                                 
+ global_average_pooling2d_1  (None, 1280)              0         
+  (GlobalAveragePooling2D)                                       
+                                                                 
+ dense_1 (Dense)             (None, 1)                 1281      
+                                                                 
+ dropout_1 (Dropout)         (None, 1)                 0         
+                                                                 
+=================================================================
+Total params: 2259265 (8.62 MB)
+Trainable params: 2225153 (8.49 MB)
+Non-trainable params: 34112 (133.25 KB)
+_________________________________________________________________
+
+
+
+
+
+# Train the model
+
+Epoch 1/50
+42/42 [==============================] - ETA: 0s - loss: 1.8767 - binary_accuracy: 0.7796
+C:\Users\DELL\anaconda3\Lib\site-packages\keras\src\engine\training.py:3103: UserWarning: You are saving your model as an HDF5 file via `model.save()`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')`.
+  saving_api.save_model(
+42/42 [==============================] - 105s 2s/step - loss: 1.8767 - binary_accuracy: 0.7796 - val_loss: 0.9780 - val_binary_accuracy: 0.9030
+Epoch 2/50
+42/42 [==============================] - 64s 2s/step - loss: 1.7601 - binary_accuracy: 0.8184 - val_loss: 2.2830 - val_binary_accuracy: 0.7727
+Epoch 3/50
+42/42 [==============================] - 68s 2s/step - loss: 1.4299 - binary_accuracy: 0.8716 - val_loss: 4.1115 - val_binary_accuracy: 0.6030
+Epoch 4/50
+42/42 [==============================] - 65s 2s/step - loss: 1.3471 - binary_accuracy: 0.8868 - val_loss: 2.7032 - val_binary_accuracy: 0.7273
+Epoch 5/50
+42/42 [==============================] - 61s 1s/step - loss: 1.2898 - binary_accuracy: 0.8959 - val_loss: 2.6023 - val_binary_accuracy: 0.7212
+Epoch 6/50
+42/42 [==============================] - 68s 2s/step - loss: 1.1723 - binary_accuracy: 0.9081 - val_loss: 1.4930 - val_binary_accuracy: 0.8545
+Epoch 7/50
+42/42 [==============================] - 98s 2s/step - loss: 1.2437 - binary_accuracy: 0.8959 - val_loss: 2.0825 - val_binary_accuracy: 0.7636
+Epoch 8/50
+42/42 [==============================] - 64s 2s/step - loss: 1.3050 - binary_accuracy: 0.8929 - val_loss: 8.4564 - val_binary_accuracy: 0.4455
+Epoch 9/50
+42/42 [==============================] - 62s 1s/step - loss: 1.5295 - binary_accuracy: 0.8055 - val_loss: 1.5892 - val_binary_accuracy: 0.4576
+Epoch 10/50
+42/42 [==============================] - 61s 1s/step - loss: 1.6081 - binary_accuracy: 0.8617 - val_loss: 0.8290 - val_binary_accuracy: 0.5364
+Epoch 11/50
+42/42 [==============================] - 62s 1s/step - loss: 1.2984 - binary_accuracy: 0.8685 - val_loss: 6.3019 - val_binary_accuracy: 0.4455
+Epoch 12/50
+42/42 [==============================] - 61s 1s/step - loss: 1.5431 - binary_accuracy: 0.8723 - val_loss: 6.3787 - val_binary_accuracy: 0.4455
+Epoch 13/50
+42/42 [==============================] - 63s 1s/step - loss: 1.4069 - binary_accuracy: 0.8913 - val_loss: 8.3760 - val_binary_accuracy: 0.4455
+Epoch 14/50
+42/42 [==============================] - 73s 2s/step - loss: 1.2654 - binary_accuracy: 0.8739 - val_loss: 7.2896 - val_binary_accuracy: 0.4455
+Epoch 15/50
+42/42 [==============================] - 63s 1s/step - loss: 1.2210 - binary_accuracy: 0.8959 - val_loss: 8.1201 - val_binary_accuracy: 0.4455
+Epoch 16/50
+42/42 [==============================] - 64s 2s/step - loss: 1.3775 - binary_accuracy: 0.8792 - val_loss: 5.4711 - val_binary_accuracy: 0.4455
+Epoch 17/50
+42/42 [==============================] - 70s 2s/step - loss: 1.4505 - binary_accuracy: 0.8017 - val_loss: 2.4578 - val_binary_accuracy: 0.4758
+Epoch 18/50
+42/42 [==============================] - 74s 2s/step - loss: 1.6366 - binary_accuracy: 0.7584 - val_loss: 1.5418 - val_binary_accuracy: 0.4455
+Epoch 19/50
+42/42 [==============================] - 64s 2s/step - loss: 1.4523 - binary_accuracy: 0.8374 - val_loss: 0.5624 - val_binary_accuracy: 0.7182
+Epoch 20/50
+42/42 [==============================] - 70s 2s/step - loss: 1.6939 - binary_accuracy: 0.8465 - val_loss: 3.4741 - val_binary_accuracy: 0.4455
+Epoch 21/50
+42/42 [==============================] - 69s 2s/step - loss: 1.6749 - binary_accuracy: 0.8328 - val_loss: 5.7177 - val_binary_accuracy: 0.4455
+Epoch 22/50
+42/42 [==============================] - 70s 2s/step - loss: 1.2509 - binary_accuracy: 0.8853 - val_loss: 3.5398 - val_binary_accuracy: 0.4455
+Epoch 23/50
+42/42 [==============================] - 65s 2s/step - loss: 1.5528 - binary_accuracy: 0.8640 - val_loss: 4.6860 - val_binary_accuracy: 0.4455
+Epoch 24/50
+42/42 [==============================] - 205s 5s/step - loss: 1.1953 - binary_accuracy: 0.9065 - val_loss: 4.7350 - val_binary_accuracy: 0.4485
+Epoch 25/50
+42/42 [==============================] - 63s 2s/step - loss: 1.4170 - binary_accuracy: 0.9020 - val_loss: 1.6876 - val_binary_accuracy: 0.5667
+Epoch 26/50
+42/42 [==============================] - 58s 1s/step - loss: 1.3448 - binary_accuracy: 0.9043 - val_loss: 2.0650 - val_binary_accuracy: 0.5818
+Epoch 27/50
+42/42 [==============================] - 64s 2s/step - loss: 1.3225 - binary_accuracy: 0.9073 - val_loss: 2.5047 - val_binary_accuracy: 0.5121
+Epoch 28/50
+42/42 [==============================] - 59s 1s/step - loss: 1.4332 - binary_accuracy: 0.8944 - val_loss: 3.4732 - val_binary_accuracy: 0.4606
+Epoch 29/50
+42/42 [==============================] - 62s 1s/step - loss: 1.6364 - binary_accuracy: 0.8587 - val_loss: 2.7157 - val_binary_accuracy: 0.4970
+
+
+
+# Evaluate the model
+
+11/11 [==============================] - 4s 245ms/step
+Accuracy: 0.72
+Precision: 0.72
+Recall: 0.60
+F1-score: 0.65
+Confusion matrix:
+[[149  34]
+ [ 59  88]]
+
+
+# Label an image from the code
+
+
+1/1 [==============================] - 0s 63ms/step
+<matplotlib.image.AxesImage at 0x23123a01e50>
+
+
+
+
+
+
+
+# Video Demo
+
+1/1 [==============================] - 0s 87ms/step
+1/1 [==============================] - 0s 60ms/step
+1/1 [==============================] - 0s 48ms/step
+1/1 [==============================] - 0s 96ms/step
+1/1 [==============================] - 0s 61ms/step
+1/1 [==============================] - 0s 53ms/step
+1/1 [==============================] - 0s 50ms/step
+1/1 [==============================] - 0s 49ms/step
+1/1 [==============================] - 0s 47ms/step
+1/1 [==============================] - 0s 44ms/step
+1/1 [==============================] - 0s 43ms/step
+1/1 [==============================] - 0s 42ms/step
+1/1 [==============================] - 0s 42ms/step
+1/1 [==============================] - 0s 44ms/step
+1/1 [==============================] - 0s 42ms/step
+1/1 [==============================] - 0s 50ms/step
+1/1 [==============================] - 0s 43ms/step
+1/1 [==============================] - 0s 58ms/step
+1/1 [==============================] - 0s 43ms/step
+1/1 [==============================] - 0s 44ms/step
+1/1 [==============================] - 0s 45ms/step
+1/1 [==============================] - 0s 40ms/step
+1/1 [==============================] - 0s 42ms/step
+1/1 [==============================] - 0s 42ms/step
+1/1 [==============================] - 0s 40ms/step
+1/1 [==============================] - 0s 42ms/step
+1/1 [==============================] - 0s 52ms/step
+1/1 [==============================] - 0s 42ms/step
+1/1 [==============================] - 0s 42ms/step
+1/1 [==============================] - 0s 46ms/step
+1/1 [==============================] - 0s 44ms/step
+1/1 [==============================] - 0s 48ms/step
+1/1 [==============================] - 0s 47ms/step
+1/1 [==============================] - 0s 47ms/step
+1/1 [==============================] - 0s 49ms/step
+1/1 [==============================] - 0s 45ms/step
+1/1 [==============================] - 0s 47ms/step
+1/1 [==============================] - 0s 41ms/step
+1/1 [==============================] - 0s 47ms/step
+1/1 [==============================] - 0s 44ms/step
+1/1 [==============================] - 0s 43ms/step
+1/1 [==============================] - 0s 42ms/step
+1/1 [==============================] - 0s 43ms/step
+1/1 [==============================] - 0s 43ms/step
+1/1 [==============================] - 0s 42ms/step
+1/1 [==============================] - 0s 44ms/step
+1/1 [==============================] - 0s 42ms/step
+1/1 [==============================] - 0s 44ms/step
+1/1 [==============================] - 0s 44ms/step
+1/1 [==============================] - 0s 42ms/step
+1/1 [==============================] - 0s 41ms/step
+1/1 [==============================] - 0s 41ms/step
+1/1 [==============================] - 0s 42ms/step
+1/1 [==============================] - 0s 46ms/step
+1/1 [==============================] - 0s 44ms/step
+1/1 [==============================] - 0s 43ms/step
+1/1 [==============================] - 0s 41ms/step
+1/1 [==============================] - 0s 43ms/step
+1/1 [==============================] - 0s 44ms/step
+1/1 [==============================] - 0s 43ms/step
+1/1 [==============================] - 0s 41ms/step
+
+
+
+
+
+
+
+
+
+
